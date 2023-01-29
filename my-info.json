@@ -1,6 +1,7 @@
 {
-    "color": ["green","blue","black"],
+    "favoriteColor": ["green","blue","black"],
     "country": "South Korea",
-    "numOfPop": 51740000,
-    "isWillVisitIn5Year": true
+    "numOfPopulation": 51740000,
+    "isWillVisitIn5Year": true,
+    "favoriteFood": ["rendang","ketoprak","pizza"]
 }
