@@ -34,15 +34,15 @@ export default function ContactForm() {
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               {/* <p>{data}</p> */}
-              
-            {data && 
-            <View>
-              
-          <Text>Username: {JSON.parse(data).userName}</Text>
-          <Text>Emai: {JSON.parse(data).email}</Text>
-          <Text>BirthDate: {JSON.parse(data).userBirthday}</Text>
-            </View>
-            }
+
+              {data &&
+                <View>
+
+                  <Text>Username: {JSON.parse(data).userName}</Text>
+                  <Text>Emai: {JSON.parse(data).email}</Text>
+                  <Text>BirthDate: {JSON.parse(data).userBirthday}</Text>
+                </View>
+              }
               <Pressable
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => setModalVisible(!modalVisible)}>
@@ -55,11 +55,10 @@ export default function ContactForm() {
       <div>
         <form onSubmit={handleSubmit((data) => onSubmit(data))}>
           <Text>Username</Text>
-          {/* required: true, */}
-          <input style={{ width: "100%" }} {...register("userName", { maxLength: 50, pattern: letterPattern })} placeholder="Username" />
+          <input style={{ width: "100%" }} {...register("userName", { required: true, maxLength: 50, pattern: letterPattern })} placeholder="Username" />
           {errors.userName && <p>Please check the Username</p>}
           <Text>Email</Text>
-          <input style={{ width: "100%" }}  {...register("email", { pattern: emailPattern })} placeholder="Email" />
+          <input style={{ width: "100%" }}  {...register("email", { required: true, pattern: emailPattern })} placeholder="Email" />
           {errors.email && <p>Please check the Email</p>}
 
           <Text>Birth Date</Text>
